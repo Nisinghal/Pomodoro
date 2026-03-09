@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Y2K retro metallic Pomodoro timer.">
+    <title>Y2K Focus Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Pixelated fonts for Y2K retro aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- SKZOO Keycharm Chain -->
+        <!-- 8-Member SKZOO Keycharm Chain -->
+        <div class="charm-container">
+            <div class="charm-string-link"></div>
+
+            <!-- 1. Wolf Chan (Wolf/Greyish Purple) -->
+            <div class="charm-character wolfchan">
+                <svg viewBox="0 0 100 100" width="35" height="35">
+                    <path d="M 25 45 L 20 10 L 45 25 Z" fill="#A8B4D1" />
+                    <path d="M 75 45 L 80 10 L 55 25 Z" fill="#A8B4D1" />
+                    <circle cx="50" cy="55" r="28" fill="#FFF" />
+                    <path d="M 22 55 A 28 28 0 0 1 78 55 L 78 60 A 28 28 0 0 1 22 60 Z" fill="#A8B4D1" />
+                    <!-- Little cheek fluff -->
+                    <circle cx="28" cy="65" r="3" fill="#A8B4D1" opacity="0.4" />
+                    <circle cx="72" cy="65" r="3" fill="#A8B4D1" opacity="0.4" />
+                    <!-- Sleepy smiling eyes -->
+                    <path d="M 32 55 Q 38 52 42 55" fill="none" stroke="#222" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <path d="M 58 55 Q 62 52 68 55" fill="none" stroke="#222" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <circle cx="50" cy="62" r="3.5" fill="#222" />
+                    <path d="M 45 68 Q 50 72 55 68" fill="none" stroke="#222" stroke-width="1.5"
+                        stroke-linecap="round" />
+                </svg>
+            </div>
+            <div class="charm-string-link"></div>
+
+            <!-- 2. Leebit (Rabbit/White) -->
+            <div class="charm-character leebit">
+                <svg viewBox="0 0 100 100" width="35" height="35">
+                    <ellipse cx="38" cy="20" rx="7" ry="20" fill="#FFF" />
+                    <ellipse cx="62" cy="20" rx="7" ry="20" fill="#FFF" />
+                    <ellipse cx="38" cy="18" rx="3.5" ry="12" fill="#FF8496" />
+                    <ellipse cx="62" cy="18" rx="3.5" ry="12" fill="#FF8496" />
+                    <circle cx="50" cy="55" r="30" fill="#FFF" />
+                    <!-- Angry eyes -->
+                    <path d="M 30 52 L 42 58" fill="none" stroke="#222" stroke-width="2.5" stroke-linecap="round" />
+                    <path d="M 70 52 L 58 58" fill="none" stroke="#222" stroke-width="2.5" stroke-linecap="round" />
+                    <path d="M 35 55 Q 38 60 42 55" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" />
+                    <path d="M 65 55 Q 62 60 58 55" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" />
+                    <circle cx="50" cy="62" r="2.5" fill="#222" />
+                    <rect x="47" y="65" width="6" height="5" fill="#FFF" stroke="#222" stroke-width="1.5" />
+                    <line x1="50" y1="65" x2="50" y2="70" stroke="#222" stroke-width="1.5" />
+                </svg>
+            </div>
+            <div class="charm-string-link"></div>
+
+            <!-- 3. Dwaekki (PigRabbit/Pink) -->
+            <div class="charm-character dwaekki">
+                <svg viewBox="0 0 100 100" width="35" height="35">
+                    <ellipse cx="38" cy="25" rx="6" ry="18" fill="#FF9EBE" stroke="#FF9EBE" stroke-width="1" />
+                    <ellipse cx="62" cy="25" rx="6" ry="18" fill="#FF9EBE" stroke="#FF9EBE" stroke-width="1" />
+                    <ellipse cx="38" cy="23" rx="3" ry="12" fill="#FFC9D9" />
+                    <ellipse cx="62" cy="23" rx="3" ry="12" fill="#FFC9D9" />
+                    <circle cx="50" cy="55" r="30" fill="#FF9EBE" />
+                    <circle cx="34" cy="65" r="4" fill="#FF5E8E" opacity="0.6" />
+                    <circle cx="66" cy="65" r="4" fill="#FF5E8E" opacity="0.6" />
+                    <path d="M 32 50 Q 38 48 42 52" fill="none" stroke="#222" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <path d="M 68 50 Q 62 48 58 52" fill="none" stroke="#222" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <path d="M 35 55 Q 38 52 42 55" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" />
+                    <path d="M 65 55 Q 62 52 58 55" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" />
+                    <!-- Pig Snout -->
+                    <ellipse cx="50" cy="62" rx="7" ry="5" fill="#FF7CB0" />
+                    <circle cx="47" cy="62" r="1.5" fill="#222" />
+                    <circle cx="53" cy="62" r="1.5" fill="#222" />
+                    <path d="M 45 68 Q 50 72 55 68" fill="none" stroke="#222" stroke-width="1.5"
+                        stroke-linecap="round" />
+                </svg>
+            </div>
+            <div class="charm-string-link"></div>
+
+            <!-- 4. Jiniret (Ferret/White) -->
+            <div class="charm-character jiniret">
+                <svg viewBox="0 0 100 100" width="35" height="35">
+                    <circle cx="30" cy="35" r="12" fill="#FFF" />
+                    <circle cx="70" cy="35" r="12" fill="#FFF" />
+                    <ellipse cx="30" cy="35" rx="5" ry="6" fill="#FFB6C1" />
+                    <ellipse cx="70" cy="35" rx="5" ry="6" fill="#FFB6C1" />
+                    <circle cx="50" cy="55" r="28" fill="#FFF" />
+                    <!-- Whiskers -->
+                    <path d="M 15 55 L 22 56 M 15 60 L 22 59" stroke="#DDD" stroke-width="1.5" />
+                    <path d="M 85 55 L 78 56 M 85 60 L 78 59" stroke="#DDD" stroke-width="1.5" />
+                    <!-- Beauty mark -->
+                    <circle cx="60" cy="68" r="1" fill="#222" />
+                    <!-- Eyes & nose -->
+                    <path d="M 32 58 Q 38 55 42 59" fill="none" stroke="#222" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <path d="M 68 58 Q 62 55 58 59" fill="none" stroke="#222" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <circle cx="37" cy="57" r="1.5" fill="#222" />
+                    <circle cx="63" cy="57" r="1.5" fill="#222" />
+                    <ellipse cx="50" cy="62" rx="4" ry="2.5" fill="#222" />
+                    <path d="M 45 68 Q 50 68 55 68" fill="none" stroke="#222" stroke-width="1.5"
+                        stroke-linecap="round" />
+                </svg>
+            </div>
+            <div class="charm-string-link"></div>
+
+            <!-- 5. HAN QUOKKA (Quokka/Brown) -->
+            <div class="charm-character hanquokka">
+                <svg viewBox="0 0 100 100" width="35" height="35">
+                    <path d="M 30 35 L 35 20 L 45 30 Z" fill="#C08D64" />
+                    <path d="M 70 35 L 65 20 L 55 30 Z" fill="#C08D64" />
+                    <!-- Chubby cheeks outline -->
+                    <path
+                        d="M 22 50 C 15 70, 40 85, 50 85 C 60 85, 85 70, 78 50 C 80 40, 75 30, 50 30 C 25 30, 20 40, 22 50 Z"
+                        fill="#D3A277" />
+                    <!-- Hair tuft -->
+                    <path d="M 45 35 Q 50 28 55 35 Q 48 40 45 35 Z" fill="#C08D64" />
+                    <path d="M 32 55 Q 38 52 42 56" fill="none" stroke="#222" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <path d="M 68 55 Q 62 52 58 56" fill="none" stroke="#222" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <circle cx="37" cy="55" r="2" fill="#222" />
+                    <circle cx="63" cy="55" r="2" fill="#222" />
+                    <!-- Quokka nose/mouth -->
+                    <ellipse cx="50" cy="58" rx="4" ry="3" fill="#3D291F" />
+                    <rect x="47" y="65" width="6" height="5" fill="#FFF" stroke="#3D291F" stroke-width="1.5" />
+                    <line x1="50" y1="65" x2="50" y2="70" stroke="#3D291F" stroke-width="1.5" />
+                    <path d="M 43 62 Q 50 67 57 62" fill="none" stroke="#3D291F" stroke-width="1.5"
+                        stroke-linecap="round" />
+                </svg>
+            </div>
+            <div class="charm-string-link"></div>
+
+            <!-- 6. BbokAri (Chick/Bright Yellow) -->
+            <div class="charm-character bbokari">
+                <svg viewBox="0 0 100 100" width="35" height="35">
+                    <circle cx="50" cy="55" r="30" fill="#FFEE4A" />
+                    <circle cx="32" cy="62" r="3.5" fill="#FF7CB0" opacity="0.8" />
+                    <circle cx="68" cy="62" r="3.5" fill="#FF7CB0" opacity="0.8" />
+                    <!-- Big eyes with highlights -->
+                    <circle cx="36" cy="54" r="5" fill="#222" />
+                    <circle cx="37" cy="52" r="1.5" fill="#FFF" />
+                    <circle cx="64" cy="54" r="5" fill="#222" />
+                    <circle cx="63" cy="52" r="1.5" fill="#FFF" />
+                    <circle cx="50" cy="60" r="4.5" fill="#FF9B00" /> <!-- Orange beak -->
+                    <path d="M 33 46 Q 36 43 40 45" fill="none" stroke="#222" stroke-width="1.5"
+                        stroke-linecap="round" />
+                    <path d="M 67 46 Q 64 43 60 45" fill="none" stroke="#222" stroke-width="1.5"
+                        stroke-linecap="round" />
+                    <!-- Hair fluff -->
+                    <path d="M 45 25 C 40 32, 35 45, 42 45 C 38 42, 42 35, 50 35 C 45 32, 45 28, 45 25 Z"
+                        fill="#FFD700" />
+                </svg>
+            </div>
+            <div class="charm-string-link"></div>
+
+            <!-- 7. PuppyM (Dog/Brown) -->
+            <div class="charm-character puppym">
+                <svg viewBox="0 0 100 100" width="35" height="35">
+                    <!-- Floppy ears pointing OUT and DOWN -->
+                    <ellipse cx="22" cy="50" rx="9" ry="20" fill="#B38965" />
+                    <ellipse cx="78" cy="50" rx="9" ry="20" fill="#B38965" />
+                    <!-- Face -->
+                    <path
+                        d="M 28 55 C 25 70, 40 80, 50 80 C 60 80, 75 70, 72 55 C 75 40, 65 35, 50 35 C 35 35, 25 40, 28 55 Z"
+                        fill="#C99F7B" />
+                    <circle cx="36" cy="65" r="3.5" fill="#FF7CB0" opacity="0.6" />
+                    <circle cx="64" cy="65" r="3.5" fill="#FF7CB0" opacity="0.6" />
+                    <!-- Puppy eyes -->
+                    <path d="M 32 58 Q 38 55 42 59" fill="none" stroke="#222" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <path d="M 68 58 Q 62 55 58 59" fill="none" stroke="#222" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <circle cx="37" cy="57" r="1.5" fill="#222" />
+                    <circle cx="63" cy="57" r="1.5" fill="#222" />
+                    <ellipse cx="50" cy="62" rx="3.5" ry="2.5" fill="#222" />
+                    <line x1="50" y1="64" x2="50" y2="68" stroke="#222" stroke-width="1.5" />
+                    <path d="M 45 68 Q 50 72 55 68" fill="none" stroke="#222" stroke-width="1.5"
+                        stroke-linecap="round" />
+                    <!-- Hair fluff -->
+                    <path d="M 40 32 C 45 42, 60 40, 55 32" fill="none" stroke="#B38965" stroke-width="3"
+                        stroke-linecap="round" />
+                </svg>
+            </div>
+            <div class="charm-string-link"></div>
+
+            <!-- 8. FoxI.Ny (Fox/Sand) -->
+            <div class="charm-character foxiny">
+                <svg viewBox="0 0 100 100" width="35" height="35">
+                    <!-- Pointy giant ears -->
+                    <path d="M 25 55 L 15 15 L 50 35 Z" fill="#DDBCA6" />
+                    <path d="M 75 55 L 85 15 L 50 35 Z" fill="#DDBCA6" />
+                    <path d="M 28 45 L 22 25 L 42 35 Z" fill="#FFB6C1" />
+                    <path d="M 72 45 L 78 25 L 58 35 Z" fill="#FFB6C1" />
+
+                    <path
+                        d="M 25 55 C 25 75, 45 85, 50 85 C 55 85, 75 75, 75 55 C 80 40, 70 35, 50 35 C 30 35, 20 40, 25 55 Z"
+                        fill="#FCECE1" />
+                    <!-- Closed eyes curving down -->
+                    <path d="M 32 56 Q 38 60 42 56" fill="none" stroke="#4A3427" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <path d="M 68 56 Q 62 60 58 56" fill="none" stroke="#4A3427" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <circle cx="36" cy="62" r="2.5" fill="#FFB6C1" opacity="0.7" />
+                    <circle cx="64" cy="62" r="2.5" fill="#FFB6C1" opacity="0.7" />
+                    <!-- Cute smiling snout -->
+                    <circle cx="50" cy="64" r="8" fill="#FFF" />
+                    <ellipse cx="50" cy="62" rx="3" ry="2" fill="#4A3427" />
+                    <path d="M 45 66 Q 50 70 55 66" fill="none" stroke="#4A3427" stroke-width="2"
+                        stroke-linecap="round" />
+                </svg>
+            </div>
+        </div>
+
+        <header class="header">
+            <h1>FOCUS</h1>
+            <div class="session-tracker">
+                <span class="pixel-icon">&lt;3</span>
+                <span id="sessions-count">0</span> REPS
+            </div>
+        </header>
+
+        <main class="timer-main">
+            <!-- SKZOO Lo-Fi Player -->
+            <div class="lofi-player">
+                <div class="lofi-track-info">
+                    <span class="scrolling-text">🎵 NOW PLAYING: STRAY KIDS LOFI BEATS ~ CHILL STUDY VIBES 🎵</span>
+                </div>
+                <div class="lofi-controls">
+                    <button class="small-metal-btn" id="btn-prev">⏮</button>
+                    <button class="small-metal-btn" id="btn-play-pause">▶</button>
+                    <button class="small-metal-btn" id="btn-next">⏭</button>
+                    <!-- Hidden YouTube iFrame for audio -->
+                    <div id="youtube-player-container" style="display: none;"></div>
+                </div>
+            </div>
+
+            <!-- Timer Display -->
+            <div class="timer-display-wrapper">
+                <div class="screen-bezel">
+                    <div class="screen-glass">
+                        <div id="time-display" class="time-display">25:00</div>
+                        <div id="status-message" class="status-message">READY! (^.^)</div>
+                    </div>
+                </div>
+                <div class="timer-progress-ring">
+                    <svg width="320" height="320" viewBox="0 0 320 320">
+                        <circle cx="160" cy="160" r="145" class="ring-bg"></circle>
+                        <circle cx="160" cy="160" r="145" class="ring-progress" id="progress-ring-circle"></circle>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Mode Tabs -->
+            <div class="timer-modes text-center">
+                <button class="mode-btn metal-btn active" id="mode-pomodoro">POMODORO</button>
+                <button class="mode-btn metal-btn" id="mode-short-break">BREAK</button>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls text-center">
+                <button id="btn-start-pause" class="metal-btn large-btn" aria-label="Start Timer">
+                    <span id="text-start-pause">START</span>
+                </button>
+                <button id="btn-reset" class="metal-btn large-btn reset-btn" aria-label="Reset Timer">
+                    <span>RESET</span>
+                </button>
+            </div>
+
+            <!-- SKZOO Gacha Item Machine -->
+            <div class="gacha-section">
+                <div class="gacha-machine">
+                    <div class="gacha-window" id="gacha-inventory">
+                        <!-- Unlocked items will appear here -->
+                    </div>
+                    <button id="btn-gacha-pull" class="metal-btn gacha-btn" disabled>
+                        <span>PULL GACHA (⭐ 1)</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- Audio for alarm -->
+    <audio id="alarm-sound" preload="auto">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

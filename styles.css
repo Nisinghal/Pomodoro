@@ -1,0 +1,641 @@
+:root {
+    /* Girly Y2K Palette */
+    --clr-bg-main: #FFD6E8;
+    /* Soft baby pink background */
+    --clr-bg-dots: #FFA8CC;
+    /* Darker pink for cute dot pattern */
+
+    /* Device Casing - Soft Silvers & Whites */
+    --clr-metal-light: #FFFFFF;
+    --clr-metal-base: #E8EBEF;
+    --clr-metal-dark: #C5CDD6;
+    --clr-metal-edge: #A0AAB5;
+
+    /* Tamagotchi-style LCD Screen */
+    --clr-screen-bg: #EAE6FE;
+    /* Very soft lavender/blue LCD */
+    --clr-screen-text: #6A5ACD;
+    /* Deep purple pixel text */
+
+    /* Accents */
+    --clr-accent: #FF66B2;
+    /* Hot pink glow */
+    --clr-accent-dim: #D1478D;
+
+    --font-heading: 'Press Start 2P', monospace;
+    --font-body: 'VT323', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--clr-bg-main);
+    /* Cute glowing dot pattern */
+    background-image: radial-gradient(var(--clr-bg-dots) 15%, transparent 15%);
+    background-size: 30px 30px;
+    background-position: 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    color: #444;
+}
+
+/* Y2K Tamagotchi/Gadget Container */
+.app-container {
+    background: linear-gradient(135deg, var(--clr-metal-light) 0%, var(--clr-metal-base) 50%, var(--clr-metal-dark) 100%);
+    width: 100%;
+    max-width: 440px;
+    border-radius: 60px;
+    /* Super rounded cute shape */
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow:
+        inset 0 6px 15px rgba(255, 255, 255, 0.9),
+        inset 0 -10px 20px rgba(160, 170, 181, 0.5),
+        inset -5px -5px 10px rgba(255, 102, 178, 0.1),
+        /* Slight pink reflection inside */
+        0 25px 45px rgba(255, 120, 180, 0.3),
+        /* Soft glowing pink drop shadow */
+        0 0 0 3px var(--clr-metal-edge),
+        0 0 0 6px #FFF;
+    /* Cute white outer lip */
+    position: relative;
+    border-bottom: 8px solid var(--clr-metal-edge);
+    /* Chunky analog bottom */
+}
+
+/* Cute lanyard loop hole detail on the side */
+.app-container::before {
+    content: '';
+    position: absolute;
+    top: 65px;
+    right: 8px;
+    /* Pushed clearly inside the device edge */
+    width: 25px;
+    height: 45px;
+    background-color: var(--clr-bg-main);
+    border-radius: 10px;
+    box-shadow:
+        inset 5px 0 10px rgba(0, 0, 0, 0.1),
+        inset -2px 0 5px rgba(255, 255, 255, 0.8),
+        -2px 0 2px rgba(255, 255, 255, 1);
+    border: 3px solid var(--clr-metal-dark);
+}
+
+/* Header */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    /* More space between header and timer */
+    padding: 0 0.5rem;
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: #FF85C2;
+    /* Soft bubblegum pink */
+    text-shadow: 2px 2px 0px #FFF, 0px 4px 0px var(--clr-metal-dark);
+    letter-spacing: 1px;
+    transform: rotate(-3deg);
+    /* Slightly playful angle */
+}
+
+.session-tracker {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: #FF66B2;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    border: 2px solid #FFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.pixel-icon {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #FF66B2;
+}
+
+/* Keycharm Styles */
+.charm-container {
+    position: absolute;
+    top: 90px;
+    /* Dropped down so it hangs from the literal hole */
+    right: -2px;
+    /* Centered in the hole */
+    z-index: 20;
+    flex-direction: column;
+    align-items: center;
+    transform-origin: top left;
+    animation: swing 5s infinite ease-in-out;
+}
+
+.charm-string {
+    width: 3px;
+    height: 25px;
+    /* Drop from the hole */
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+}
+
+.charm-string-link {
+    width: 2px;
+    height: 18px;
+    /* Longer connector */
+    background: linear-gradient(180deg, #B4C0D0 0%, #E8EBEF 50%, #B4C0D0 100%);
+    border-radius: 2px;
+    margin: -8px auto;
+    /* Perfect horizontal centering & vertical overlapping */
+    z-index: 10;
+    display: block;
+    /* Treat as block so margin:auto works */
+}
+
+.charm-character {
+    display: block;
+    margin: 0 auto;
+    /* Force perfect horizontal alignment */
+    width: max-content;
+    /* Hug the SVG tightly */
+    text-align: center;
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.15));
+    transform-origin: top center;
+    position: relative;
+    z-index: 25;
+    /* Always stays on top of the links */
+}
+
+/* Ensure SVG doesn't add mysterious inline spacing */
+.charm-character svg {
+    display: block;
+    /* Removes weird SVG inline spacing */
+    margin: 0 auto;
+}
+
+/* Individual character staggered jiggles */
+.charm-character.wolfchan {
+    animation: counter-swing 3.2s infinite ease-in-out alternate;
+}
+
+.charm-character.leebit {
+    animation: counter-swing 2.8s infinite ease-in-out alternate-reverse;
+}
+
+.charm-character.dwaekki {
+    animation: counter-swing 3.5s infinite ease-in-out alternate;
+}
+
+.charm-character.jiniret {
+    animation: counter-swing 2.5s infinite ease-in-out alternate-reverse;
+}
+
+.charm-character.hanquokka {
+    animation: counter-swing 3.1s infinite ease-in-out alternate;
+}
+
+.charm-character.bbokari {
+    animation: counter-swing 2.9s infinite ease-in-out alternate-reverse;
+}
+
+.charm-character.puppym {
+    animation: counter-swing 3.4s infinite ease-in-out alternate;
+}
+
+.charm-character.foxiny {
+    animation: counter-swing 2.7s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes swing {
+
+    0%,
+    100% {
+        transform: rotate(-6deg);
+    }
+
+    /* Slightly gentler overarching swing for a long chain */
+    50% {
+        transform: rotate(8deg);
+    }
+}
+
+@keyframes counter-swing {
+    0% {
+        transform: rotate(3deg);
+    }
+
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+
+/* Main content centering */
+.timer-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.text-center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Mode Buttons - Soft 3D Pillowy Grey Buttons */
+.timer-modes {
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.metal-btn {
+    /* Super pillowy 3D grey/silver analog button */
+    background: linear-gradient(180deg, #FFFFFF 0%, #D8DFE5 40%, #B8C2CC 100%);
+    border: 2px solid var(--clr-metal-edge);
+    border-radius: 100px;
+    /* Big pill shape */
+    color: #5B6570;
+    /* Darker grey text for better contrast */
+    /* Soft grey text */
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    padding: 0.7rem 1.2rem;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
+    cursor: pointer;
+    box-shadow:
+        inset 0 4px 6px rgba(255, 255, 255, 0.9),
+        /* Top highlight */
+        inset 0 -4px 6px rgba(160, 170, 181, 0.5),
+        /* Bottom inner shadow */
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        /* Outer drop shadow */
+        0 6px 0 var(--clr-metal-edge);
+    /* Chunky 3D bottom edge */
+    transition: all 0.1s ease;
+    text-transform: uppercase;
+    position: relative;
+    top: 0;
+}
+
+.metal-btn:active,
+.mode-btn.active {
+    background: linear-gradient(180deg, #B8C2CC 0%, #D8DFE5 60%, #FFFFFF 100%);
+    box-shadow:
+        inset 0 4px 8px rgba(0, 0, 0, 0.15),
+        0 2px 2px rgba(0, 0, 0, 0.1),
+        0 2px 0 var(--clr-metal-edge);
+    color: var(--clr-accent);
+    transform: translateY(4px);
+}
+
+.mode-btn.active {
+    border-color: #FFF;
+}
+
+/* Screen Bezel and LCD Display */
+.timer-display-wrapper {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    border-radius: 50%;
+    /* Soft white/silver ring */
+    background: #FFF;
+    border: 3px solid var(--clr-metal-edge);
+    box-shadow:
+        inset 0 4px 8px rgba(0, 0, 0, 0.05),
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        0 0 0 8px var(--clr-metal-base);
+    /* Chunky plastic ring around it */
+}
+
+/* The LCD Screen in the middle */
+.screen-bezel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Robust centering */
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background-color: #E2DFEB;
+    /* LCD Glass edge */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(255, 255, 255, 0.8);
+    border: 1px solid #CCC;
+}
+
+.screen-glass {
+    width: 174px;
+    height: 174px;
+    border-radius: 50%;
+    background: var(--clr-screen-bg);
+    box-shadow:
+        inset 0 0 20px rgba(106, 90, 205, 0.1),
+        /* Slight purple inner glow */
+        inset 4px 4px 8px rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cute digital pixel grid over screen */
+.screen-glass::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(106, 90, 205, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(106, 90, 205, 0.05) 1px, transparent 1px);
+    background-size: 4px 4px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.time-display {
+    font-family: var(--font-body);
+    /* Changed to VT323 for smoother LCD look */
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--clr-screen-text);
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5), 1px 1px 0px rgba(0, 0, 0, 0.1);
+    letter-spacing: -1px;
+    margin-bottom: 0px;
+    line-height: 1;
+    z-index: 2;
+}
+
+.status-message {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    color: var(--clr-screen-text);
+    text-transform: uppercase;
+    z-index: 2;
+    text-shadow: 1px 1px 0px #FFF;
+    margin-top: 5px;
+}
+
+/* Progress Ring Overlay */
+.timer-progress-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    /* Guaranteed perfect centering */
+    width: 320px;
+    height: 320px;
+    z-index: 1;
+}
+
+.timer-progress-ring circle {
+    fill: none;
+    stroke-width: 20;
+    stroke-linecap: round;
+}
+
+.ring-bg {
+    stroke: rgba(255, 255, 255, 0.8);
+    /* White track */
+}
+
+.ring-progress {
+    stroke: var(--clr-accent);
+    /* Soft glowing pink line */
+    filter: drop-shadow(0 0 10px rgba(255, 102, 178, 0.6));
+    transition: stroke-dashoffset 1s linear;
+}
+
+/* Main Controls */
+.controls {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.large-btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    min-width: 150px;
+    border-radius: 40px;
+    /* Big chunky oval buttons */
+    /* Enhance the 3D cuteness for primary controls */
+    border: 3px solid #FFF;
+    color: #8A9CA8;
+    text-shadow: 1px 1px 0px #FFF, 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.reset-btn {
+    min-width: unset;
+    padding: 1.2rem 1.8rem;
+    font-size: 1rem;
+}
+
+/* Action states specific to big buttons */
+.large-btn:active {
+    transform: translateY(6px);
+}
+
+/* Body override class when in break mode via JS */
+body.mode-break {
+    --clr-bg-main: #D6E8FF;
+    /* Baby blue */
+    --clr-bg-dots: #A8CCFF;
+    --clr-accent: #66B2FF;
+    /* Cyber blue */
+    --clr-accent-dim: #478DD1;
+    --clr-screen-bg: #E6F5FC;
+    /* Icy screen */
+    --clr-screen-text: #2A5A82;
+    /* Deep blue pixel text */
+}
+
+body.mode-break .app-container {
+    box-shadow:
+        inset 0 6px 15px rgba(255, 255, 255, 0.9),
+        inset 0 -10px 20px rgba(160, 170, 181, 0.5),
+        inset -5px -5px 10px rgba(102, 178, 255, 0.1),
+        0 25px 45px rgba(102, 178, 255, 0.3),
+        0 0 0 3px var(--clr-metal-edge),
+        0 0 0 6px #FFF;
+}
+
+/* =========================================
+   SKZOO LO-FI PLAYER
+   ========================================= */
+.lofi-player {
+    width: 100%;
+    background: var(--clr-screen-bg);
+    border: 2px solid var(--clr-metal-edge);
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.lofi-track-info {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--clr-screen-text);
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 1.5rem;
+    background: #FFF;
+    border: 1px solid var(--clr-metal-edge);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.scrolling-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.lofi-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.small-metal-btn {
+    background: linear-gradient(180deg, #FFFFFF 0%, #D8DFE5 40%, #B8C2CC 100%);
+    border: 2px solid var(--clr-metal-edge);
+    border-radius: 5px;
+    color: #5B6570;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    box-shadow: 0 2px 0 var(--clr-metal-edge);
+    transition: all 0.1s;
+}
+
+.small-metal-btn:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* =========================================
+   GACHA MACHINE SECTION
+   ========================================= */
+.gacha-section {
+    width: 100%;
+    margin-top: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 1rem;
+    border: 2px dashed var(--clr-accent);
+}
+
+.gacha-machine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.gacha-window {
+    width: 100%;
+    min-height: 60px;
+    background: var(--clr-screen-bg);
+    border: 3px solid var(--clr-metal-dark);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gacha-item {
+    font-size: 1.5rem;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: #FFF;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.gacha-btn {
+    font-size: 0.8rem !important;
+    padding: 0.6rem 1.5rem !important;
+    background: linear-gradient(180deg, #FFD6E8 0%, #FF85C2 100%) !important;
+    color: #FFF !important;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2) !important;
+    border-color: #FF66B2 !important;
+    box-shadow: 0 4px 0 #D1478D !important;
+}
+
+.gacha-btn:disabled {
+    background: linear-gradient(180deg, #E8EBEF 0%, #C5CDD6 100%) !important;
+    color: #A0AAB5 !important;
+    border-color: #A0AAB5 !important;
+    box-shadow: 0 4px 0 #8A9CA8 !important;
+    cursor: not-allowed;
+    transform: none !important;
+}
