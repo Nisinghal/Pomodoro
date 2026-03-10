@@ -75,6 +75,63 @@ document.addEventListener('DOMContentLoaded', () => {
             updateSessionsDisplay();
         }
 
+        // --- YOUTUBE LOFI PLAYER LOGIC ---
+        // Required by YouTube IFrame API
+        // This function needs to be globally accessible for the YouTube API script to call it.
+        // For now, it's placed here, but typically it would be in the global scope.
+        window.onYouTubeIframeAPIReady = function () {
+            ytPlayer = new YT.Player('youtube-player-container', {
+                height: '0',
+                width: '0',
+                videoId: 'E9z-yZ9Etyo', // Popular SKZ Lofi Mix (or can be swapped)
+                playerVars: {
+                    'autoplay': 0,
+                    'controls': 0,
+                    'disablekb': 1,
+                    'loop': 1,
+                    'playlist': 'E9z-yZ9Etyo' // Needed for looping single video
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            // Player is ready, controls can now be used
+            console.log("Lo-Fi Player Ready!");
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING) {
+                isLofiPlaying = true;
+                btnPlayPause.textContent = '⏸';
+            } else {
+                isLofiPlaying = false;
+                btnPlayPause.textContent = '▶';
+            }
+        }
+
+        function toggleLofi() {
+            if (!ytPlayer || !ytPlayer.playVideo) return; // API not ready yet
+
+            if (isLofiPlaying) {
+                ytPlayer.pauseVideo();
+            } else {
+                ytPlayer.playVideo();
+            }
+        }
+
+        // Just skipping forward/backward within the long lofi mix
+        function skipLofiTrack(forward = true) {
+            if (!ytPlayer || !ytPlayer.getCurrentTime) return;
+            const currentTime = ytPlayer.getCurrentTime();
+            // Skip 3 minutes forward/backward to simulate "next track" in a long mix
+            ytPlayer.seekTo(forward ? currentTime + 180 : currentTime - 180, true);
+        }
+
+
         // --- EVENT LISTENERS ---
         startPauseBtn.addEventListener('click', toggleTimer);
         btnReset.addEventListener('click', resetTimer);
