@@ -232,19 +232,7 @@
         </header>
 
         <main class="timer-main">
-            <!-- SKZOO Lo-Fi Player -->
-            <div class="lofi-player">
-                <div class="lofi-track-info">
-                    <span class="scrolling-text">🎵 NOW PLAYING: STRAY KIDS LOFI BEATS ~ CHILL STUDY VIBES 🎵</span>
-                </div>
-                <div class="lofi-controls">
-                    <button class="small-metal-btn" id="btn-prev">⏮</button>
-                    <button class="small-metal-btn" id="btn-play-pause">▶</button>
-                    <button class="small-metal-btn" id="btn-next">⏭</button>
-                    <!-- Hidden YouTube iFrame for audio -->
-                    <div id="youtube-player-container" style="display: none;"></div>
-                </div>
-            </div>
+
 
             <!-- Timer Display -->
             <div class="timer-display-wrapper">
@@ -277,7 +265,15 @@
                     <span>RESET</span>
                 </button>
             </div>
-
+            <!-- Spotify Stray Kids Player -->
+            <div class="lofi-player"
+                style="padding: 0; border: none; background: transparent; box-shadow: none; margin-bottom: 0.5rem; overflow: hidden;">
+                <iframe style="border-radius:12px; display:block; height:80px; overflow:hidden;"
+                    src="https://open.spotify.com/embed/playlist/37i9dQZF1DWWqjEVD8TBr9?utm_source=generator&theme=0"
+                    width="100%" height="80" frameBorder="0" scrolling="no" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+            </div>
             <!-- SKZOO Gacha Item Machine -->
             <div class="gacha-section">
                 <div class="gacha-machine">
@@ -291,9 +287,6 @@
             </div>
         </main>
     </div>
-
-    <!-- YouTube IFrame API -->
-    <script src="https://www.youtube.com/iframe_api"></script>
 
     <!-- Audio for alarm -->
     <audio id="alarm-sound" preload="auto">
